@@ -1,0 +1,15 @@
+cache:
+  mount:
+    - .git
+
+build:
+  image: $$IMAGE
+  commands:
+    - pip install -r requirements.txt
+    - py.test
+
+matrix:
+    IMAGE:
+        - python:2.7
+        - pypy:2
+
